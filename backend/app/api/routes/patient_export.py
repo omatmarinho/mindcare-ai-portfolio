@@ -3,7 +3,7 @@ Exportação de todos os dados de um paciente, em JSON.
 
 Atende aos direitos de acesso e portabilidade da LGPD (art. 18): o psicólogo,
 que é o controlador dos dados, consegue entregar ao paciente (ou levar para
-outro sistema) tudo o que o MindCare guarda sobre ele:
+outro sistema) tudo o que o Psinara guarda sobre ele:
 
 - cadastro e consentimento para IA;
 - consultas;

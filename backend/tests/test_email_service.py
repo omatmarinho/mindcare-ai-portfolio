@@ -15,7 +15,7 @@ def _fake_post(status, body):
 def test_resend_rejection_is_logged_with_reason(monkeypatch, caplog):
     monkeypatch.setenv("EMAIL_BACKEND", "resend")
     monkeypatch.setenv("RESEND_API_KEY", "re_chave_ficticia_123")
-    monkeypatch.setenv("EMAIL_FROM", "MindCare AI <nao-responda@exemplo.com>")
+    monkeypatch.setenv("EMAIL_FROM", "Psinara <nao-responda@exemplo.com>")
     monkeypatch.setattr(email_service.httpx, "post",
                         _fake_post(403, {"message": "The domain is not verified"}))
 
@@ -30,7 +30,7 @@ def test_resend_rejection_is_logged_with_reason(monkeypatch, caplog):
 def test_resend_success_does_not_log_error(monkeypatch, caplog):
     monkeypatch.setenv("EMAIL_BACKEND", "resend")
     monkeypatch.setenv("RESEND_API_KEY", "re_chave_ficticia_123")
-    monkeypatch.setenv("EMAIL_FROM", "MindCare AI <nao-responda@exemplo.com>")
+    monkeypatch.setenv("EMAIL_FROM", "Psinara <nao-responda@exemplo.com>")
     monkeypatch.setattr(email_service.httpx, "post", _fake_post(200, {"id": "abc"}))
 
     with caplog.at_level(logging.ERROR, logger="mindcare.email"):

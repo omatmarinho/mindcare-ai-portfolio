@@ -55,7 +55,7 @@ export function ConsentForm({ patientId }: { patientId: number }) {
         <span>
           Confirmo que o paciente foi informado e <strong>consentiu</strong> com o uso de inteligência artificial
           para transcrever e organizar os registros das sessões. O processamento é feito nos servidores do
-          MindCare AI, sem envio a terceiros, e todo conteúdo gerado passa pela minha revisão.
+          Psinara, sem envio a terceiros, e todo conteúdo gerado passa pela minha revisão.
         </span>
       </label>
       <div>

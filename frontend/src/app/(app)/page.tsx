@@ -38,7 +38,7 @@ function delta(current: number, previous: number) {
   return { pct, text: `${pct > 0 ? "+" : pct < 0 ? "−" : ""}${Math.abs(pct)}%` };
 }
 
-// Tela inicial: o que o psicólogo precisa ver ao abrir o MindCare
+// Tela inicial: o que o psicólogo precisa ver ao abrir o Psinara
 export default async function HomePage() {
   const result = await apiFetch<DashboardSummary>("/dashboard");
   if (!result.ok) return <Alert kind="error">{result.error}</Alert>;

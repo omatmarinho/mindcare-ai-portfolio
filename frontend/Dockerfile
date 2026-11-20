@@ -1,4 +1,4 @@
-# Imagem do frontend Next.js do MindCare AI (build em duas etapas)
+# Imagem do frontend Next.js do Psinara (build em duas etapas)
 
 # 1) Build
 FROM node:24-slim AS build

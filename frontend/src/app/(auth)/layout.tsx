@@ -21,7 +21,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
 
         <div className="relative flex items-center gap-3">
           <LogoMark className="h-10 w-10" />
-          <span className="text-xl font-semibold tracking-tight" translate="no">MindCare <span className="text-accent-300">AI</span></span>
+          <span className="text-xl font-semibold tracking-tight" translate="no">Psi<span className="text-accent-300">nara</span></span>
         </div>
 
         <div className="relative max-w-md">
@@ -47,7 +47,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
         <div className="w-full max-w-sm">
           <div className="mb-8 flex items-center justify-center gap-2.5 lg:hidden">
             <LogoMark className="h-9 w-9" />
-            <span className="text-xl font-semibold tracking-tight text-brand-800" translate="no">MindCare <span className="text-accent-600">AI</span></span>
+            <span className="text-xl font-semibold tracking-tight text-brand-800" translate="no">Psi<span className="text-accent-600">nara</span></span>
           </div>
           <Suspense fallback={<p className="text-sm text-gray-500">Carregando…</p>}>{children}</Suspense>
           <a href={REPO_URL} target="_blank" rel="noreferrer"

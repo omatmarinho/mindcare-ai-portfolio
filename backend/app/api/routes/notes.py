@@ -226,7 +226,7 @@ def create_note_from_audio(
     # Só a extensão, e só letras/números (o nome do arquivo vem do usuário)
     extension = os.path.splitext(audio.filename or "")[1][1:10]
     suffix = "." + extension if extension.isalnum() else ""
-    fd, temp_path = tempfile.mkstemp(prefix="mindcare-audio-", suffix=suffix)
+    fd, temp_path = tempfile.mkstemp(prefix="psinara-audio-", suffix=suffix)
     size = 0
     try:
         with os.fdopen(fd, "wb") as out:

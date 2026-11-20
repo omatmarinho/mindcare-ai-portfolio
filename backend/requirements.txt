@@ -1,4 +1,4 @@
-# Dependências diretas do backend do MindCare AI.
+# Dependências diretas do backend do Psinara.
 # Instalar em um ambiente novo:
 #     python -m pip install -r requirements.txt
 

@@ -1,6 +1,6 @@
 ---
 version: 1.0
-name: MindCare-AI
+name: Psinara
 description: Interface de consultório para psicólogos. Verde-floresta profundo como cor principal, dourado quente para destaques e pontos de atenção, fundo creme-sálvia com cartões brancos arredondados. Visual de painel (dashboard) calmo e organizado, que transmite cuidado e sigilo, sem cara de software hospitalar nem de app de marketing. Fonte sem serifa (Geist) em toda a interface.
 
 colors:
@@ -150,9 +150,9 @@ components:
     strokeWidth: 7px
 ---
 
-# MindCare AI: guia visual
+# Psinara: guia visual
 
-Este arquivo descreve o visual **atual** do MindCare AI. As cores e classes reais estão em
+Este arquivo descreve o visual **atual** do Psinara. As cores e classes reais estão em
 `frontend/src/app/globals.css` (tokens `brand-*`, `accent-*`, `gray-*`, `canvas`) e nos componentes
 compartilhados. Se este guia e o código divergirem, o código vale e este arquivo deve ser atualizado.
 

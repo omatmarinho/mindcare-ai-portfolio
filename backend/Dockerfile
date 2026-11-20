@@ -1,4 +1,4 @@
-# Imagem da API FastAPI do MindCare AI
+# Imagem da API FastAPI do Psinara
 FROM python:3.12-slim
 
 # WITH_LOCAL_AI=true instala o Whisper (IA real). A demonstração usa a IA simulada.

@@ -1,4 +1,4 @@
-# MindCare AI — demonstração
+# Psinara — demonstração
 
 Gestão de consultório para psicólogos, com **registros de sessão organizados por IA e sempre revisados pelo profissional**.
 Esta é a versão de portfólio de um produto em desenvolvimento: um recorte do sistema real, com dados fictícios.

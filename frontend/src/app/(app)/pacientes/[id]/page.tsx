@@ -184,7 +184,7 @@ export default async function PatientPage({ params }: PageProps<"/pacientes/[id]
           </Card>
 
           <Card title="Exportar dados"
-            description="Tudo o que o MindCare guarda sobre este paciente, em JSON. Para pedidos de acesso ou portabilidade (LGPD, art. 18). Contém dados sensíveis: guarde em local seguro.">
+            description="Tudo o que o Psinara guarda sobre este paciente, em JSON. Para pedidos de acesso ou portabilidade (LGPD, art. 18). Contém dados sensíveis: guarde em local seguro.">
             <a href={`/pacientes/${patient.id}/exportar`} download className={buttonClasses("secondary", "sm")}>
               <DownloadIcon className="h-4 w-4" /> Baixar dados (JSON)
             </a>

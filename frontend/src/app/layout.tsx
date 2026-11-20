@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MindCare AI",
+  title: "Psinara",
   description: "Gestão de consultório para psicólogos",
   // Páginas com dados de pacientes não devem aparecer em buscadores
   robots: { index: false, follow: false },

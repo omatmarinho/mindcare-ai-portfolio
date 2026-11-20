@@ -89,7 +89,7 @@ def register_user(
 ):
     """
     A resposta é SEMPRE a mesma, exista o e-mail ou não. Assim ninguém usa
-    o cadastro para descobrir quem tem conta no MindCare AI. Quem precisa
+    o cadastro para descobrir quem tem conta no Psinara. Quem precisa
     saber (o dono do e-mail) é avisado por e-mail.
     """
     existing_user = crud.get_user_by_email(db, user.email)

@@ -77,7 +77,7 @@ export function Brand() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
       <LogoMark />
-      <span className="text-[1.05rem] font-semibold tracking-tight text-brand-800" translate="no">MindCare <span className="text-accent-600">AI</span></span>
+      <span className="text-[1.05rem] font-semibold tracking-tight text-brand-800" translate="no">Psi<span className="text-accent-600">nara</span></span>
     </Link>
   );
 }

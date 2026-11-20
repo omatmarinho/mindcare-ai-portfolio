@@ -7,7 +7,7 @@ router = APIRouter()
 @router.get("/health")
 def health_check():
     return {
-        "application": "MindCare AI",
+        "application": "Psinara",
         "status": "healthy",
         "version": "0.1.0"
     }

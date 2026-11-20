@@ -112,9 +112,9 @@ def send_password_reset_email(to: str, token: str, valid_minutes: int) -> None:
     link = f"{frontend_url()}/redefinir-senha?token={token}"
     send_email(
         to=to,
-        subject="MindCare AI - Redefinição de senha",
+        subject="Psinara - Redefinição de senha",
         text=(
-            "Recebemos um pedido para redefinir a senha da sua conta no MindCare AI.\n\n"
+            "Recebemos um pedido para redefinir a senha da sua conta no Psinara.\n\n"
             f"Para criar uma nova senha, acesse o link abaixo (válido por {valid_minutes} minutos):\n"
             f"{link}\n\n"
             "Se você não fez esse pedido, ignore este e-mail. Sua senha continua a mesma."
@@ -126,9 +126,9 @@ def send_account_exists_email(to: str) -> None:
     """Enviado quando alguém tenta cadastrar um e-mail que já tem conta."""
     send_email(
         to=to,
-        subject="MindCare AI - Tentativa de cadastro com seu e-mail",
+        subject="Psinara - Tentativa de cadastro com seu e-mail",
         text=(
-            "Alguém tentou criar uma conta no MindCare AI usando este e-mail, "
+            "Alguém tentou criar uma conta no Psinara usando este e-mail, "
             "mas você já possui uma conta.\n\n"
             f"Se foi você, basta entrar: {frontend_url()}/login\n"
             f"Esqueceu a senha? Redefina aqui: {frontend_url()}/esqueci-senha\n\n"
@@ -141,9 +141,9 @@ def send_email_verification_email(to: str, token: str, valid_hours: int) -> None
     link = f"{frontend_url()}/verificar-email?token={token}"
     send_email(
         to=to,
-        subject="MindCare AI - Confirme seu e-mail",
+        subject="Psinara - Confirme seu e-mail",
         text=(
-            "Bem-vindo(a) ao MindCare AI!\n\n"
+            "Bem-vindo(a) ao Psinara!\n\n"
             f"Para confirmar seu e-mail, acesse o link abaixo (válido por {valid_hours} horas):\n"
             f"{link}\n\n"
             "Se você não criou esta conta, ignore este e-mail."

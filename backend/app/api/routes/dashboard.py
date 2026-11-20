@@ -1,5 +1,5 @@
 """
-Resumo do dia: o que o psicólogo precisa ver ao abrir o MindCare.
+Resumo do dia: o que o psicólogo precisa ver ao abrir o Psinara.
 
 - Consultas de hoje (horário local), menos as canceladas.
 - Registros com IA esperando revisão, e os que falharam.

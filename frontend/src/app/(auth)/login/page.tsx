@@ -15,7 +15,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
     <>
       <WakeApi />
       <div className="mb-6">
-        <h1 className="text-2xl font-semibold tracking-tight text-gray-900">Conheça o MindCare AI</h1>
+        <h1 className="text-2xl font-semibold tracking-tight text-gray-900">Conheça o Psinara</h1>
         <p className="mt-1 text-sm text-gray-500">
           Gestão de consultório para psicólogos, com registros de sessão organizados por IA e revisados pelo profissional.
         </p>

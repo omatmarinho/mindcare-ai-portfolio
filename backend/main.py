@@ -25,8 +25,8 @@ check_settings()
 # Em produção a documentação interativa (/docs) fica desligada:
 # não há motivo para expor o mapa da API publicamente.
 app = FastAPI(
-    title="MindCare AI API",
-    description="API da plataforma MindCare AI",
+    title="Psinara API",
+    description="API da plataforma Psinara",
     version="0.1.0",
     docs_url=None if is_production() else "/docs",
     redoc_url=None if is_production() else "/redoc",
@@ -96,7 +96,7 @@ app.include_router(patient_overview.router)
 @app.get("/")
 def home():
     return {
-        "message": "Bem-vindo à API do MindCare AI!",
+        "message": "Bem-vindo à API do Psinara!",
         "status": "online"
     }
 app.include_router(demo.router)

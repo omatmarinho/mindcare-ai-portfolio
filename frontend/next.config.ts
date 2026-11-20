@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const isDev = process.env.NODE_ENV === "development";
 
 // Política de conteúdo (CSP): o navegador só carrega scripts, estilos, imagens e
-// conexões do próprio MindCare AI. Mesmo que algum texto malicioso fosse parar na
+// conexões do próprio Psinara. Mesmo que algum texto malicioso fosse parar na
 // página, ele não conseguiria buscar código ou enviar dados para outro site.
 // Sem "nonce" para manter as páginas estáticas (ver guia de CSP do Next.js).
 const contentSecurityPolicy = [
@@ -26,7 +26,7 @@ const securityHeaders = [
   { key: "Content-Security-Policy", value: contentSecurityPolicy },
   // Não envia o endereço da página para outros sites (os links de e-mail têm tokens na URL)
   { key: "Referrer-Policy", value: "no-referrer" },
-  // Impede que o MindCare AI seja exibido dentro de outro site (clickjacking)
+  // Impede que o Psinara seja exibido dentro de outro site (clickjacking)
   { key: "X-Frame-Options", value: "DENY" },
   // O navegador não deve "adivinhar" o tipo dos arquivos
   { key: "X-Content-Type-Options", value: "nosniff" },
