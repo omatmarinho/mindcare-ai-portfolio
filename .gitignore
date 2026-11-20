@@ -1,0 +1,44 @@
+
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+!.env.example
+*.env
+!*.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+dist/
+
+# Arquivos de sistema e editores
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
+
+# Bancos SQLite locais
+*.db
+*.db-journal
+*.tsbuildinfo

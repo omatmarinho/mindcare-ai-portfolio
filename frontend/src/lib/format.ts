@@ -1,0 +1,51 @@
+export function formatDateTime(value: string | null) {
+  if (!value) return "";
+  return new Intl.DateTimeFormat("pt-BR", {
+    dateStyle: "short",
+    timeStyle: "short",
+    timeZone: "America/Sao_Paulo",
+  }).format(new Date(value));
+}
+
+/** Nomes amigáveis para as ações registradas na auditoria. */
+export const ACTION_LABELS: Record<string, string> = {
+  "auth.login_success": "Entrou no sistema",
+  "auth.login_failed": "Tentativa de login sem sucesso",
+  "auth.login_blocked_unverified": "Login bloqueado (e-mail não confirmado)",
+  "auth.logout": "Saiu de todos os dispositivos",
+  "auth.token_refresh": "Sessão renovada",
+  "auth.token_reuse_detected": "Sessão suspeita encerrada (todas as sessões)",
+  "auth.register": "Criou a conta",
+  "auth.register_existing_email": "Tentativa de cadastro com e-mail existente",
+  "auth.password_reset_requested": "Pediu redefinição de senha",
+  "auth.password_reset_completed": "Redefiniu a senha",
+  "auth.password_reset_invalid_token": "Link de redefinição inválido",
+  "auth.email_verified": "Confirmou o e-mail",
+  "patient.create": "Cadastrou paciente",
+  "patient.list": "Listou pacientes",
+  "patient.read": "Visualizou paciente",
+  "patient.update": "Editou paciente",
+  "patient.archive": "Arquivou paciente",
+  "patient.restore": "Restaurou paciente",
+  "patient.access_denied": "Acesso negado a paciente",
+  "patient.overview": "Viu o resumo do paciente",
+  "patient.export": "Exportou os dados do paciente",
+  "audit.view": "Consultou o histórico",
+  "patient.ai_consent_given": "Registrou consentimento para IA",
+  "patient.ai_consent_revoked": "Revogou consentimento para IA",
+  "note.create": "Criou registro de sessão",
+  "note.list": "Listou registros de sessão",
+  "note.read": "Abriu registro de sessão",
+  "note.update": "Revisou registro de sessão",
+  "note.approve": "Aprovou registro de sessão",
+  "note.access_denied": "Acesso negado a registro",
+  "note.retry": "Reprocessou registro de sessão",
+  "agenda.availability_update": "Alterou horários de atendimento",
+  "appointment.create": "Agendou consulta",
+  "appointment.update": "Remarcou consulta",
+  "appointment.status": "Mudou status de consulta",
+  "appointment.list": "Consultou a agenda",
+  "appointment.access_denied": "Acesso negado a consulta",
+  "dashboard.view": "Abriu o resumo do dia",
+  "demo.session_start": "Entrou na demonstração",
+};

@@ -1,0 +1,31 @@
+# Render Blueprint da API (plano gratuito). O frontend fica na Vercel.
+# Valores marcados com sync: false são preenchidos no painel do Render (nunca aqui).
+services:
+  - type: web
+    name: mindcare-ai-api
+    runtime: docker
+    rootDir: backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DEMO_MODE
+        value: "true"
+      - key: AI_BACKEND
+        value: demo
+      - key: EMAIL_BACKEND
+        value: console
+      # Banco temporário: as contas de demonstração já são descartáveis
+      - key: DATABASE_URL
+        value: sqlite:////tmp/mindcare.db
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: INTERNAL_API_KEY
+        generateValue: true
+      - key: NOTES_ENCRYPTION_KEY
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: FRONTEND_URL
+        sync: false

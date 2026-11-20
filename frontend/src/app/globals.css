@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/*
+ * Identidade visual do MindCare AI: verde-floresta profundo, dourado quente
+ * nos destaques e fundo creme-sálvia. Os cinzas puxam levemente para o verde
+ * para combinar com o fundo; por isso a escala gray-* é redefinida aqui e
+ * todas as telas mudam de tom juntas.
+ */
+@theme inline {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Verde-floresta (cor principal) */
+  --color-brand-50: #f2f5ef;
+  --color-brand-100: #e2e9dc;
+  --color-brand-200: #c6d4bb;
+  --color-brand-300: #a2b893;
+  --color-brand-400: #7b966b;
+  --color-brand-500: #5c7a4d;
+  --color-brand-600: #46603a;
+  --color-brand-700: #3a4f31;
+  --color-brand-800: #2d3f27;
+  --color-brand-900: #1c3426;
+
+  /* Dourado (destaques e pontos de atenção) */
+  --color-accent-50: #fef8ea;
+  --color-accent-100: #fcecc6;
+  --color-accent-300: #f6c860;
+  --color-accent-500: #f2a51d;
+  --color-accent-600: #d1860c;
+  --color-accent-700: #a4670b;
+
+  /* Cinzas levemente esverdeados */
+  --color-gray-50: #f8f9f6;
+  --color-gray-100: #f1f2ee;
+  --color-gray-200: #e4e6df;
+  --color-gray-300: #d0d3ca;
+  --color-gray-400: #a3a79c;
+  --color-gray-500: #767a6f;
+  --color-gray-600: #5a5e54;
+  --color-gray-700: #43463e;
+  --color-gray-800: #2c2f29;
+  --color-gray-900: #1d2420;
+
+  /* Fundo da aplicação (creme-sálvia) */
+  --color-canvas: #edefe9;
+}
+
+html {
+  /* Toque no celular: sem atraso de duplo toque e com um realce discreto na cor da marca */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(70, 96, 58, 0.12);
+}
+
+body {
+  background: var(--color-canvas);
+  color: #1d2420;
+}
+
+@layer components {
+  /* Cartão padrão: superfície branca arredondada, borda suave e sombra discreta */
+  .card {
+    @apply rounded-2xl border border-gray-200/70 bg-white shadow-[0_1px_2px_rgba(29,36,32,0.04)];
+  }
+
+  /* Primeira letra maiúscula ("qui., 19/11" -> "Qui., 19/11") */
+  .capitalize-first {
+    display: inline-block;
+  }
+  .capitalize-first::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+/* Foco visível e consistente para quem navega pelo teclado */
+:where(a, button, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 2px;
+}

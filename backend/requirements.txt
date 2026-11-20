@@ -1,0 +1,27 @@
+# Dependências diretas do backend do MindCare AI.
+# Instalar em um ambiente novo:
+#     python -m pip install -r requirements.txt
+
+# API
+fastapi[standard]==0.163.1
+
+# Banco de dados e migrações
+SQLAlchemy==2.1.9
+psycopg2-binary==2.9.13
+alembic==1.20.1
+python-dotenv==1.2.4
+# Base de fusos horários (o Windows não traz a do Python)
+tzdata==2026.6
+
+# Segurança
+pwdlib[argon2]==0.4.2
+PyJWT==2.15.1
+slowapi==0.1.10
+
+# Registros clínicos: criptografia
+cryptography==50.0.2
+
+# A IA local (Whisper) fica em requirements-ai.txt: a demonstração usa a IA simulada
+
+# Testes
+pytest==9.2.0

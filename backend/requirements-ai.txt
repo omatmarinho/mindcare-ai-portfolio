@@ -1,0 +1,6 @@
+# IA local (transcrição com Whisper). Necessário só com AI_BACKEND=local.
+#     python -m pip install -r requirements.txt -r requirements-ai.txt
+# O resumo usa o Ollama, que roda à parte (https://ollama.com).
+faster-whisper==1.2.1
+# av 19 removeu um parâmetro que o faster-whisper 1.2.1 usa; manter em 18.x
+av==18.1.0
