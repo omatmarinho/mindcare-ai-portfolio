@@ -1,4 +1,5 @@
 import { DemoButton, LoginForm } from "@/components/auth-forms";
+import { WakeApi } from "@/components/wake-api";
 
 const NOTICES: Record<string, string> = {
   expirada: "Sua sessão expirou. Entre novamente.",
@@ -12,6 +13,7 @@ export default async function LoginPage({ searchParams }: PageProps<"/login">) {
 
   return (
     <>
+      <WakeApi />
       <div className="mb-6">
         <h1 className="text-2xl font-semibold tracking-tight text-gray-900">Conheça o MindCare AI</h1>
         <p className="mt-1 text-sm text-gray-500">

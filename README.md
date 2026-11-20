@@ -3,7 +3,7 @@
 Gestão de consultório para psicólogos, com **registros de sessão organizados por IA e sempre revisados pelo profissional**.
 Esta é a versão de portfólio de um produto em desenvolvimento: um recorte do sistema real, com dados fictícios.
 
-**[Experimentar a demonstração](#)** · sem cadastro: cada visitante ganha uma conta própria, com pacientes e sessões fictícias, apagada em 24 horas.
+**[Experimentar a demonstração](https://mindcare-ai-portfolio.vercel.app)** · sem cadastro: cada visitante ganha uma conta própria, com pacientes e sessões fictícias, apagada em 24 horas.
 
 ![Tela inicial](docs/screenshots/inicio.png)
 
@@ -88,7 +88,7 @@ cd backend && pytest    # 180 testes, banco em memória, sem internet
    - `API_URL`: endereço do Render;
    - `INTERNAL_API_KEY`: o mesmo valor gerado pelo Render.
 
-No plano gratuito do Render, a API "dorme" após 15 minutos sem uso, e o primeiro acesso leva cerca de um minuto.
+No plano gratuito do Render, a API "dorme" após 15 minutos sem uso. A tela de entrada já a acorda em segundo plano, mas o primeiro acesso ainda pode levar até um minuto.
 
 ## Sobre esta versão
 
