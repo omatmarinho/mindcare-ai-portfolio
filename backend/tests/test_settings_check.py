@@ -11,8 +11,8 @@ def _production(monkeypatch, **overrides):
         "APP_ENV": "production",
         "JWT_SECRET_KEY": SAFE_SECRET,
         "EMAIL_BACKEND": "resend",
-        "FRONTEND_URL": "https://app.mindcare.example",
-        "CORS_ORIGINS": "https://app.mindcare.example",
+        "FRONTEND_URL": "https://app.psinara.example",
+        "CORS_ORIGINS": "https://app.psinara.example",
     }
     env.update(overrides)
     for key, value in env.items():
@@ -27,7 +27,7 @@ def test_safe_production_config_starts(monkeypatch):
 @pytest.mark.parametrize("override", [
     {"JWT_SECRET_KEY": "curta"},
     {"EMAIL_BACKEND": "console"},
-    {"FRONTEND_URL": "http://app.mindcare.example"},
+    {"FRONTEND_URL": "http://app.psinara.example"},
     {"CORS_ORIGINS": "https://ok.example,http://inseguro.example"},
 ])
 def test_unsafe_production_config_refuses_to_start(monkeypatch, override):

@@ -37,11 +37,11 @@ def test_correct_password_is_also_blocked_while_limited(client, user_a):
 def test_register_is_rate_limited(client):
     for i in range(_limit_count(REGISTER_LIMIT)):
         response = client.post("/auth/register", json={
-            "full_name": "Psicologo", "email": f"p{i}@mindcareai.com", "password": TEST_PASSWORD,
+            "full_name": "Psicologo", "email": f"p{i}@psinara.com.br", "password": TEST_PASSWORD,
         })
         assert response.status_code == 202
 
     blocked = client.post("/auth/register", json={
-        "full_name": "Psicologo", "email": "extra@mindcareai.com", "password": TEST_PASSWORD,
+        "full_name": "Psicologo", "email": "extra@psinara.com.br", "password": TEST_PASSWORD,
     })
     assert blocked.status_code == 429

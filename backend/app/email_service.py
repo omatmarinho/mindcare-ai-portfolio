@@ -20,7 +20,7 @@ from dataclasses import dataclass
 
 import httpx
 
-logger = logging.getLogger("mindcare.email")
+logger = logging.getLogger("psinara.email")
 
 RESEND_API_URL = "https://api.resend.com/emails"
 

@@ -4,7 +4,7 @@ import re
 from app.security import create_access_token
 from tests.conftest import TEST_PASSWORD
 
-EMAIL = "novo@mindcareai.com"
+EMAIL = "novo@psinara.com.br"
 
 
 def _token_from_email(message) -> str:
@@ -126,7 +126,7 @@ def test_resend_has_same_response_for_unknown_and_verified_emails(client, user_a
     _register(client)
     pending = _resend(client, EMAIL)                         # cadastrado, não confirmado
     verified = _resend(client, user_a.email)                 # já confirmado
-    unknown = _resend(client, "naoexiste@mindcareai.com")    # não existe
+    unknown = _resend(client, "naoexiste@psinara.com.br")    # não existe
 
     assert pending.status_code == verified.status_code == unknown.status_code == 202
     assert pending.json() == verified.json() == unknown.json()

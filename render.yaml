@@ -18,7 +18,7 @@ services:
         value: console
       # Banco temporário: as contas de demonstração já são descartáveis
       - key: DATABASE_URL
-        value: sqlite:////tmp/mindcare.db
+        value: sqlite:////tmp/psinara.db
       - key: JWT_SECRET_KEY
         generateValue: true
       - key: INTERNAL_API_KEY

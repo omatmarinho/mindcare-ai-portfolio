@@ -3,7 +3,7 @@
 Gestão de consultório para psicólogos, com **registros de sessão organizados por IA e sempre revisados pelo profissional**.
 Esta é a versão de portfólio de um produto em desenvolvimento: um recorte do sistema real, com dados fictícios.
 
-**[Experimentar a demonstração](https://mindcare-ai-portfolio.vercel.app)** · sem cadastro: cada visitante ganha uma conta própria, com pacientes e sessões fictícias, apagada em 24 horas.
+**[Experimentar a demonstração](https://psinara-portfolio.vercel.app)** · sem cadastro: cada visitante ganha uma conta própria, com pacientes e sessões fictícias, apagada em 24 horas.
 
 ![Tela inicial](docs/screenshots/inicio.png)
 

@@ -15,7 +15,7 @@ if not DATABASE_URL:
     if os.getenv("APP_ENV", "development").lower() == "production":
         raise ValueError("DATABASE_URL não foi encontrada no arquivo .env")
     # Para rodar localmente sem configurar nada: um arquivo SQLite na pasta do backend
-    DATABASE_URL = "sqlite:///./mindcare.db"
+    DATABASE_URL = "sqlite:///./psinara.db"
 
 
 def normalize_database_url(url: str) -> str:

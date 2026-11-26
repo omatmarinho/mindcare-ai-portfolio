@@ -9,7 +9,7 @@ from tests.conftest import TEST_PASSWORD
 def _register(client, **overrides):
     payload = {
         "full_name": "Psicologo",
-        "email": "valido@mindcareai.com",
+        "email": "valido@psinara.com.br",
         "password": TEST_PASSWORD,
        
     }
@@ -35,36 +35,36 @@ def test_register_rejects_invalid_full_name(client, full_name):
 
 
 def test_register_rejects_email_longer_than_column(client):
-    long_email = "a" * 140 + "@mindcareai.com"  # 155 caracteres; a coluna aceita 150
+    long_email = "a" * 140 + "@psinara.com.br"  # 155 caracteres; a coluna aceita 150
     assert _register(client, email=long_email).status_code == 422
 
 
 def test_register_strips_full_name(client, db_session):
     response = _register(client, full_name="  Psicologo Com Espacos  ")
     assert response.status_code == 202
-    user = crud.get_user_by_email(db_session, "valido@mindcareai.com")
+    user = crud.get_user_by_email(db_session, "valido@psinara.com.br")
     assert user.full_name == "Psicologo Com Espacos"
 
 
 # ---------- E-mail sem diferenciar maiúsculas ----------
 
 def test_register_stores_email_in_lowercase(client, db_session):
-    assert _register(client, email="Fulano@MindCareAI.com").status_code == 202
-    assert crud.get_user_by_email(db_session, "fulano@mindcareai.com") is not None
+    assert _register(client, email="Fulano@Psinara.com.br").status_code == 202
+    assert crud.get_user_by_email(db_session, "fulano@psinara.com.br") is not None
 
 
 def test_register_same_email_with_other_case_is_duplicate(client, db_session):
-    _register(client, email="fulano@mindcareai.com")
-    _register(client, email="FULANO@mindcareai.com", full_name="Outro")
+    _register(client, email="fulano@psinara.com.br")
+    _register(client, email="FULANO@psinara.com.br", full_name="Outro")
     assert db_session.query(crud.User).count() == 1
 
 
 def test_login_ignores_email_case_and_spaces(client, db_session):
-    _register(client, email="fulano@mindcareai.com")
-    crud.mark_email_verified(db_session, crud.get_user_by_email(db_session, "fulano@mindcareai.com"))
+    _register(client, email="fulano@psinara.com.br")
+    crud.mark_email_verified(db_session, crud.get_user_by_email(db_session, "fulano@psinara.com.br"))
 
     response = client.post("/auth/login", data={
-        "username": "  Fulano@MindCareAI.com ", "password": TEST_PASSWORD,
+        "username": "  Fulano@Psinara.com.br ", "password": TEST_PASSWORD,
     })
     assert response.status_code == 200
 
@@ -77,12 +77,12 @@ def test_create_user_handles_unique_violation(db_session, monkeypatch):
     pela verificação "e-mail já existe?" antes de qualquer uma gravar.
     A segunda esbarra na restrição UNIQUE do banco e deve virar 409, não 500.
     """
-    crud.create_user(db_session, "Primeiro", "corrida@mindcareai.com", TEST_PASSWORD)
+    crud.create_user(db_session, "Primeiro", "corrida@psinara.com.br", TEST_PASSWORD)
 
     # Faz a verificação prévia "não enxergar" o usuário já gravado
     monkeypatch.setattr(crud, "get_user_by_email", lambda db, email: None)
 
-    result = crud.create_user(db_session, "Segundo", "corrida@mindcareai.com", TEST_PASSWORD)
+    result = crud.create_user(db_session, "Segundo", "corrida@psinara.com.br", TEST_PASSWORD)
     assert result is None
 
     # A sessão continua utilizável depois do erro (rollback foi feito)

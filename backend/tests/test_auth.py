@@ -16,20 +16,20 @@ def _register(client, email, full_name="Novo Psicologo"):
 
 
 def test_register_creates_user_and_returns_generic_message(client, db_session):
-    response = _register(client, "novo@mindcareai.com")
+    response = _register(client, "novo@psinara.com.br")
     assert response.status_code == 202
     body = response.json()
     assert set(body) == {"message"}  # nenhum dado da conta na resposta
 
     from app.database import crud
-    user = crud.get_user_by_email(db_session, "novo@mindcareai.com")
+    user = crud.get_user_by_email(db_session, "novo@psinara.com.br")
     assert user is not None
     assert user.hashed_password != TEST_PASSWORD  # guardada como hash
 
 
 def test_register_existing_email_has_identical_response(client, user_a):
     """O cadastro não pode ser usado para descobrir quem tem conta."""
-    new = _register(client, "outro@mindcareai.com")
+    new = _register(client, "outro@psinara.com.br")
     existing = _register(client, user_a.email, full_name="Copia")
     assert new.status_code == existing.status_code == 202
     assert new.json() == existing.json()
@@ -48,8 +48,8 @@ def test_register_existing_verified_email_notifies_owner(client, db_session, use
 
 
 def test_register_existing_unverified_email_resends_verification(client, outbox):
-    _register(client, "pendente@mindcareai.com")
-    _register(client, "pendente@mindcareai.com")
+    _register(client, "pendente@psinara.com.br")
+    _register(client, "pendente@psinara.com.br")
     assert len(outbox) == 2
     assert all("verificar-email?token=" in m.text for m in outbox)
 
@@ -83,7 +83,7 @@ def test_login_wrong_password_returns_401(client, user_a):
 
 def test_login_unknown_email_has_same_message_as_wrong_password(client):
     response = client.post("/auth/login", data={
-        "username": "naoexiste@mindcareai.com", "password": TEST_PASSWORD,
+        "username": "naoexiste@psinara.com.br", "password": TEST_PASSWORD,
     })
     assert response.status_code == 401
     assert response.json()["detail"] == "E-mail ou senha incorretos."

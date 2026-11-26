@@ -18,7 +18,7 @@ from app import crypto
 from app.ai import demo, summarizer, transcription
 from app.database.models import ClinicalNote
 
-logger = logging.getLogger("mindcare.ai")
+logger = logging.getLogger("psinara.ai")
 
 STATUS_PROCESSING = "processing"
 STATUS_PENDING_REVIEW = "pending_review"

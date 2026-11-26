@@ -109,7 +109,7 @@ def record_system(
         resource_type=resource_type,
         resource_id=resource_id,
         ip_address=None,
-        user_agent="mindcare-rotina",
+        user_agent="psinara-rotina",
         details=details,
     ))
     db.commit()

@@ -24,7 +24,7 @@ function safeNext(value: string) {
   const fallback = "/";
   if (!value.startsWith("/") || value.includes("\\")) return fallback;
   try {
-    const base = "http://mindcare.local";
+    const base = "http://psinara.local";
     const url = new URL(value, base);
     return url.origin === base ? url.pathname + url.search : fallback;
   } catch {

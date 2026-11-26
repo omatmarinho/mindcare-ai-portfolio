@@ -27,7 +27,7 @@ def test_request_sends_email_to_existing_user(client, user_a, outbox):
 
 def test_request_for_unknown_email_has_same_response_and_sends_nothing(client, user_a, outbox):
     known = _request_reset(client, user_a.email)
-    unknown = _request_reset(client, "naoexiste@mindcareai.com")
+    unknown = _request_reset(client, "naoexiste@psinara.com.br")
     assert known.status_code == unknown.status_code == 202
     assert known.json() == unknown.json()
     assert len(outbox) == 1  # só o do usuário existente
@@ -114,7 +114,7 @@ def test_new_password_must_be_valid(client, user_a, outbox):
 def test_email_verification_token_cannot_reset_password(client, outbox):
     """Cada token só serve para a sua finalidade."""
     client.post("/auth/register", json={
-        "full_name": "Novo", "email": "novo@mindcareai.com", "password": TEST_PASSWORD,
+        "full_name": "Novo", "email": "novo@psinara.com.br", "password": TEST_PASSWORD,
     })
     verification_token = _token_from_email(outbox[0])
 

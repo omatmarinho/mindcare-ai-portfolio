@@ -19,7 +19,7 @@ def test_resend_rejection_is_logged_with_reason(monkeypatch, caplog):
     monkeypatch.setattr(email_service.httpx, "post",
                         _fake_post(403, {"message": "The domain is not verified"}))
 
-    with caplog.at_level(logging.ERROR, logger="mindcare.email"):
+    with caplog.at_level(logging.ERROR, logger="psinara.email"):
         email_service.send_email("pessoa@exemplo.com", "Assunto", "Texto")  # não lança exceção
 
     log = caplog.text
@@ -33,7 +33,7 @@ def test_resend_success_does_not_log_error(monkeypatch, caplog):
     monkeypatch.setenv("EMAIL_FROM", "Psinara <nao-responda@exemplo.com>")
     monkeypatch.setattr(email_service.httpx, "post", _fake_post(200, {"id": "abc"}))
 
-    with caplog.at_level(logging.ERROR, logger="mindcare.email"):
+    with caplog.at_level(logging.ERROR, logger="psinara.email"):
         email_service.send_email("pessoa@exemplo.com", "Assunto", "Texto")
 
     assert caplog.text == ""

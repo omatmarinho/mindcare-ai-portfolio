@@ -8,7 +8,7 @@ vulnerável. Em desenvolvimento, os problemas viram apenas avisos.
 import logging
 import os
 
-logger = logging.getLogger("mindcare.settings")
+logger = logging.getLogger("psinara.settings")
 
 MIN_JWT_SECRET_LENGTH = 32
 

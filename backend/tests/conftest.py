@@ -118,12 +118,12 @@ def _login(client, email: str) -> dict:
 
 @pytest.fixture
 def user_a(db_session):
-    return _create_user(db_session, "psicologo.a@mindcareai.com", "Psicologo A")
+    return _create_user(db_session, "psicologo.a@psinara.com.br", "Psicologo A")
 
 
 @pytest.fixture
 def user_b(db_session):
-    return _create_user(db_session, "psicologo.b@mindcareai.com", "Psicologo B")
+    return _create_user(db_session, "psicologo.b@psinara.com.br", "Psicologo B")
 
 
 @pytest.fixture

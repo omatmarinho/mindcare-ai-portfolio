@@ -22,7 +22,7 @@ import uuid
 from fastapi import Request
 from fastapi.responses import JSONResponse
 
-logger = logging.getLogger("mindcare.http")
+logger = logging.getLogger("psinara.http")
 
 
 def configure_logging() -> None:
